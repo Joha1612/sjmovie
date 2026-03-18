@@ -1,33 +1,25 @@
-
 import json
 import cloudscraper
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import threading
 import time
 
-# ---------- CLOUDFLARE FRIENDLY SESSION ----------
-
+# ---------- SESSION ----------
 session = cloudscraper.create_scraper(
-    browser={
-        'browser': 'chrome',
-        'platform': 'windows',
-        'mobile': False
-    }
+    browser={'browser': 'chrome', 'platform': 'windows', 'mobile': False}
 )
 
 DATABASE_FILE = "database.json"
 
 START_PAGE = 1
 END_PAGE = 2
-
 MOVIE_THREADS = 8
 
 VIDEO_FORMATS = (".mkv", ".mp4", ".avi", ".mov", ".webm")
 
 CATEGORIES = {
-     "Bangla & Kolkata": "https://fibwatch.art/videos/category/1",
+    "Bangla & Kolkata": "https://fibwatch.art/videos/category/1",
     "Web Series": "https://fibwatch.art/videos/category/3",
     "Hindi": "https://fibwatch.art/videos/category/4",
     "Hindi Dubbed": "https://fibwatch.art/videos/category/5",
@@ -35,91 +27,62 @@ CATEGORIES = {
     "Natok": "https://fibwatch.art/videos/category/855",
 }
 
-lock = threading.Lock()
-
 # ---------- DATABASE ----------
-
 def load_database():
-
     try:
-        with open(DATABASE_FILE,"r",encoding="utf-8") as f:
+        with open(DATABASE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
-
     except:
         return []
 
-
 def save_database(data):
+    with open(DATABASE_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
-    with open(DATABASE_FILE,"w",encoding="utf-8") as f:
-        json.dump(data,f,indent=4,ensure_ascii=False)
-
-
-# ---------- SAFE REQUEST ----------
-
-def safe_request(url,retries=4):
-
-    for i in range(retries):
-
+# ---------- REQUEST ----------
+def safe_request(url, retries=4):
+    for _ in range(retries):
         try:
-
-            r = session.get(url,timeout=20)
-
+            r = session.get(url, timeout=20)
             if r.status_code == 200:
                 return r
-
-        except Exception:
-            print("Retry request:",url)
-
+        except:
+            pass
         time.sleep(2)
-
-    print("Failed request:",url)
-
+    print("Failed:", url)
     return None
 
-
 # ---------- GET WATCH LINKS ----------
-
 def get_watch_links(base_url):
-
     links = []
 
-    for page in range(START_PAGE,END_PAGE+1):
-
+    for page in range(START_PAGE, END_PAGE + 1):
         url = f"{base_url}?page_id={page}"
-
-        print("Scanning:",url)
+        print("Scanning:", url)
 
         r = safe_request(url)
-
         if not r:
             continue
 
-        soup = BeautifulSoup(r.text,"lxml")
+        soup = BeautifulSoup(r.text, "lxml")
 
         for a in soup.select("a[href*='/watch/']"):
-
-            link = urljoin(url,a["href"])
-
+            link = urljoin(url, a["href"])
             link = link.split("?")[0].rstrip("/")
 
             if link not in links:
                 links.append(link)
 
-    print("Total watch pages:",len(links))
-
+    print("Total watch pages:", len(links))
     return links
 
-# ---------- EXTRACT DOWNLOAD LINKS ----------
-
+# ---------- EXTRACT DOWNLOADS (FIXED) ----------
 def extract_downloads(soup):
 
-    downloads = set()
+    downloads = {}
 
-    for a in soup.find_all("a",href=True):
-
+    for a in soup.find_all("a", href=True):
         href = a["href"].strip()
-
         lower = href.lower()
 
         if any(ext in lower for ext in VIDEO_FORMATS):
@@ -130,109 +93,104 @@ def extract_downloads(soup):
             if "b-cdn.net" not in lower:
                 continue
 
-            downloads.add(href)
+            filename = href.split("/")[-1].lower()
 
-    return list(downloads)
+            if filename not in downloads:
+                downloads[filename] = href
 
+    return list(downloads.values())
 
 # ---------- SCRAPE MOVIE ----------
-
 def scrape_movie(url):
 
     time.sleep(0.5)
 
     r = safe_request(url)
-
     if not r:
         return None
 
-    soup = BeautifulSoup(r.text,"lxml")
+    soup = BeautifulSoup(r.text, "lxml")
 
     title = soup.find("title")
-
     if not title:
-        print("No title:",url)
         return None
 
     name = title.text.split("-")[0].strip()
 
     poster = None
-
-    meta = soup.find("meta",property="og:image")
-
+    meta = soup.find("meta", property="og:image")
     if meta:
         poster = meta.get("content")
 
     downloads = extract_downloads(soup)
 
     return {
-        "name":name,
-        "poster":poster,
-        "downloads":downloads,
-        "url":url
+        "name": name,
+        "poster": poster,
+        "downloads": downloads,
+        "url": url
     }
 
-
-# ---------- MAIN SCRAPER ----------
-
+# ---------- MAIN ----------
 def run_scraper():
 
     database = load_database()
 
-    movie_index = {m["name"]:m for m in database}
+    # case-insensitive movie index
+    movie_index = {m["name"].lower().strip(): m for m in database}
 
     new_movies = []
-
     retry_movies = []
 
-    for category,url in CATEGORIES.items():
+    for category, url in CATEGORIES.items():
 
-        print("\nCategory:",category)
+        print("\nCategory:", category)
 
         watch_links = get_watch_links(url)
 
         with ThreadPoolExecutor(max_workers=MOVIE_THREADS) as executor:
 
-            futures = [executor.submit(scrape_movie,link) for link in watch_links]
+            futures = [executor.submit(scrape_movie, link) for link in watch_links]
 
             for future in as_completed(futures):
 
                 movie = future.result()
-
                 if not movie:
                     continue
 
                 movie["category"] = category
 
                 if not movie["downloads"]:
-
-                    print("Download link not found (first try):",movie["name"])
-
                     retry_movies.append(movie["url"])
-
                     continue
 
+                key = movie["name"].lower().strip()
+                existing = movie_index.get(key)
 
-                existing = movie_index.get(movie["name"])
-
+                # ---------- MERGE ----------
                 if existing:
 
-                    existing["downloads"].extend(movie["downloads"])
-                    existing["downloads"] = list(set(existing["downloads"]))
+                    merged = {}
+
+                    for d in existing["downloads"]:
+                        merged[d.split("/")[-1].lower()] = d
+
+                    for d in movie["downloads"]:
+                        fname = d.split("/")[-1].lower()
+                        if fname not in merged:
+                            merged[fname] = d
+
+                    existing["downloads"] = list(merged.values())
 
                 else:
 
-                    movie.pop("url",None)
-
+                    movie.pop("url", None)
                     new_movies.append(movie)
+                    movie_index[key] = movie
 
-                    movie_index[movie["name"]] = movie
+                    print("New movie:", movie["name"])
 
-                    print("New movie:",movie["name"])
-
-
-    # ---------- RETRY MISSING MOVIES ----------
-
+    # ---------- RETRY ----------
     if retry_movies:
 
         print("\nRetrying missing movies...\n")
@@ -241,49 +199,68 @@ def run_scraper():
 
         with ThreadPoolExecutor(max_workers=3) as executor:
 
-            futures = [executor.submit(scrape_movie,link) for link in retry_movies]
+            futures = [executor.submit(scrape_movie, link) for link in retry_movies]
 
             for future in as_completed(futures):
 
                 movie = future.result()
-
-                if not movie:
+                if not movie or not movie["downloads"]:
                     continue
 
-                if not movie["downloads"]:
-
-                    print("Download link not found (final):",movie["name"])
-
-                    continue
-
-
-                movie.pop("url",None)
-
-                existing = movie_index.get(movie["name"])
+                key = movie["name"].lower().strip()
+                existing = movie_index.get(key)
 
                 if existing:
 
-                    existing["downloads"].extend(movie["downloads"])
-                    existing["downloads"] = list(set(existing["downloads"]))
+                    merged = {}
+
+                    for d in existing["downloads"]:
+                        merged[d.split("/")[-1].lower()] = d
+
+                    for d in movie["downloads"]:
+                        fname = d.split("/")[-1].lower()
+                        if fname not in merged:
+                            merged[fname] = d
+
+                    existing["downloads"] = list(merged.values())
 
                 else:
 
+                    movie.pop("url", None)
                     new_movies.append(movie)
+                    movie_index[key] = movie
 
-                    movie_index[movie["name"]] = movie
+                    print("Recovered:", movie["name"])
 
-                    print("Recovered movie:",movie["name"])
+    # ---------- FINAL CLEAN DATABASE ----------
+    clean_db = {}
 
+    for m in new_movies + database:
+        key = m["name"].lower().strip()
 
-    database = new_movies + database
+        if key not in clean_db:
+            clean_db[key] = m
+        else:
+            # merge downloads
+            merged = {}
+
+            for d in clean_db[key]["downloads"]:
+                merged[d.split("/")[-1].lower()] = d
+
+            for d in m["downloads"]:
+                fname = d.split("/")[-1].lower()
+                if fname not in merged:
+                    merged[fname] = d
+
+            clean_db[key]["downloads"] = list(merged.values())
+
+    database = list(clean_db.values())
 
     save_database(database)
 
-    print("\nNew movies added:",len(new_movies))
-
+    print("\nNew movies added:", len(new_movies))
 
 # ---------- RUN ----------
-
 if __name__ == "__main__":
 
     start = time.time()
@@ -292,4 +269,4 @@ if __name__ == "__main__":
 
     end = time.time()
 
-    print("\nFinished in",round(end-start,2),"seconds")
+    print("\nFinished in", round(end - start, 2), "seconds")
