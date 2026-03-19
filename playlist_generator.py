@@ -1,16 +1,14 @@
 import json
 import os
 
-INPUT_JSON = "movies.json"
+INPUT_JSON = "database.json"
 OUTPUT_FOLDER = "playlists"
 
-# folder create
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 with open(INPUT_JSON, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# category wise group
 categories = {}
 
 for movie in data:
@@ -21,13 +19,16 @@ for movie in data:
     if category not in categories:
         categories[category] = []
 
-    for q in movie.get("qualities", []):
+    for link in movie.get("downloads", []):
 
-        quality = q.get("quality", "HD")
-        link = q.get("download")
-
-        if not link:
-            continue
+        # quality detect (720p / 1080p)
+        quality = "HD"
+        if "1080" in link:
+            quality = "1080p"
+        elif "720" in link:
+            quality = "720p"
+        elif "480" in link:
+            quality = "480p"
 
         categories[category].append({
             "name": name,
@@ -35,10 +36,10 @@ for movie in data:
             "link": link
         })
 
-# create separate m3u files
+# create category wise m3u
 for category, items in categories.items():
 
-    filename = category.replace(" ", "_") + ".m3u"
+    filename = category.replace(" ", "_").replace("&", "and") + ".m3u"
     filepath = os.path.join(OUTPUT_FOLDER, filename)
 
     with open(filepath, "w", encoding="utf-8") as m3u:
@@ -52,6 +53,6 @@ for category, items in categories.items():
             )
             m3u.write(item["link"] + "\n")
 
-    print(f"Created: {filepath}")
+    print("Created:", filepath)
 
-print("\nAll category playlists created ✅")
+print("\nAll playlists created ✅")
