@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Zung.The.Rust.jpg" group-title="Web Series",Zung The Rust (2026) S01 Hindi HGM WEB (480p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Zung.The.Rust.S01.480P.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Zung.The.Rust.jpg" group-title="Web Series",Zung The Rust (2026) S01 Hindi HGM WEB (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Zung.The.Rust.S01.720P.mkv
 #EXTINF:-1 tvg-logo="https://kyujh67.b-cdn.net/upload/photos/2026/03/cactus.jpg" group-title="Web Series",Cactus (2026) S01E06 Bengali Chorki WEB (480p)
 https://kyujh67.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Cactus.(2026).S01E06.480P..mkv
 #EXTINF:-1 tvg-logo="https://kyujh67.b-cdn.net/upload/photos/2026/03/cactus.jpg" group-title="Web Series",Cactus (2026) S01E06 Bengali Chorki WEB (1080p)
