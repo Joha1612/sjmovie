@@ -1,28 +1,57 @@
 import json
+import os
 
 INPUT_JSON = "movies.json"
-OUTPUT_M3U = "netflix_playlist.m3u"
+OUTPUT_FOLDER = "playlists"
 
-with open(INPUT_JSON,"r",encoding="utf-8") as f:
-    data=json.load(f)
+# folder create
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-with open(OUTPUT_M3U,"w",encoding="utf-8") as m3u:
+with open(INPUT_JSON, "r", encoding="utf-8") as f:
+    data = json.load(f)
 
-    m3u.write("#EXTM3U\n")
+# category wise group
+categories = {}
 
-    for movie in data:
+for movie in data:
 
-        name=movie.get("name","Unknown")
+    name = movie.get("name", "Unknown")
+    category = movie.get("category", "Others")
 
-        for q in movie.get("qualities",[]):
+    if category not in categories:
+        categories[category] = []
 
-            quality=q.get("quality","HD")
-            link=q.get("download")
+    for q in movie.get("qualities", []):
 
-            if not link:
-                continue
+        quality = q.get("quality", "HD")
+        link = q.get("download")
 
-            m3u.write(f'#EXTINF:-1 group-title="Movies",{name} ({quality})\n')
-            m3u.write(link+"\n")
+        if not link:
+            continue
 
-print("Netflix style playlist created")
+        categories[category].append({
+            "name": name,
+            "quality": quality,
+            "link": link
+        })
+
+# create separate m3u files
+for category, items in categories.items():
+
+    filename = category.replace(" ", "_") + ".m3u"
+    filepath = os.path.join(OUTPUT_FOLDER, filename)
+
+    with open(filepath, "w", encoding="utf-8") as m3u:
+
+        m3u.write("#EXTM3U\n")
+
+        for item in items:
+
+            m3u.write(
+                f'#EXTINF:-1 group-title="{category}",{item["name"]} ({item["quality"]})\n'
+            )
+            m3u.write(item["link"] + "\n")
+
+    print(f"Created: {filepath}")
+
+print("\nAll category playlists created ✅")
