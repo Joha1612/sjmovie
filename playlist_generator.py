@@ -1,55 +1,57 @@
-# import json
-#
-# INPUT="database.json"
-# OUTPUT="netflix_playlist.m3u"
-#
-# with open(INPUT,"r") as f:
-#     data=json.load(f)
-#
-# with open(OUTPUT,"w") as m3u:
-#
-#     m3u.write("#EXTM3U\n")
-#
-#     for movie in data:
-#
-#         name=movie["name"]
-#         poster=movie["poster"]
-#         category=movie["category"]
-#
-#         for link in movie["downloads"]:
-#
-#             m3u.write(
-#                 f'#EXTINF:-1 tvg-logo="{poster}" group-title="{category}",{name}\n'
-#             )
-#
-#             m3u.write(link+"\n")
-#
-# print("Playlist created")
-
 import json
+import os
 
-INPUT="database.json"
-OUTPUT="netflix_playlist.m3u"
+INPUT_JSON = "movies.json"
+OUTPUT_FOLDER = "playlists"
 
-with open(INPUT,"r",encoding="utf-8") as f:
-    data=json.load(f)
+# folder create
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-with open(OUTPUT,"w",encoding="utf-8") as m3u:
+with open(INPUT_JSON, "r", encoding="utf-8") as f:
+    data = json.load(f)
 
-    m3u.write("#EXTM3U\n")
+# category wise group
+categories = {}
 
-    for movie in data:
+for movie in data:
 
-        name=movie["name"]
-        poster=movie["poster"]
-        category=movie["category"]
+    name = movie.get("name", "Unknown")
+    category = movie.get("category", "Others")
 
-        for link in movie["downloads"]:
+    if category not in categories:
+        categories[category] = []
+
+    for q in movie.get("qualities", []):
+
+        quality = q.get("quality", "HD")
+        link = q.get("download")
+
+        if not link:
+            continue
+
+        categories[category].append({
+            "name": name,
+            "quality": quality,
+            "link": link
+        })
+
+# create separate m3u files
+for category, items in categories.items():
+
+    filename = category.replace(" ", "_") + ".m3u"
+    filepath = os.path.join(OUTPUT_FOLDER, filename)
+
+    with open(filepath, "w", encoding="utf-8") as m3u:
+
+        m3u.write("#EXTM3U\n")
+
+        for item in items:
 
             m3u.write(
-                f'#EXTINF:-1 tvg-logo="{poster}" group-title="{category}",{name}\n'
+                f'#EXTINF:-1 group-title="{category}",{item["name"]} ({item["quality"]})\n'
             )
+            m3u.write(item["link"] + "\n")
 
-            m3u.write(link+"\n")
+    print(f"Created: {filepath}")
 
-print("Playlist generated successfully")
+print("\nAll category playlists created ✅")
