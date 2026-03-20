@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/02/Sangamarmar.jpg" group-title="Web Series",Sangamarmar (2026) S01E14 (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Sangamarmar.(2026).S01E14-17.Dual.720P.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/02/Sangamarmar.jpg" group-title="Web Series",Sangamarmar (2026) S01E14 (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Sangamarmar.(2026).S01E14-17.Dual.1080P.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Chiraiya.jpg" group-title="Web Series",Chiraiya (2026) S01 Dual Audio [Bengali ORG (480p)
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Chiraiya.(2026).S01.Dual.480P.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Chiraiya.jpg" group-title="Web Series",Chiraiya (2026) S01 Dual Audio [Bengali ORG (720p)
@@ -545,6 +549,10 @@ https://ctyjk89.b-cdn.net/s3/upload/videos/2026/01/[Fibwatch.Com]LBW.Love.Beyond
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E41-44.Dual.720P.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/01/LBW.Love.Beyond.Wicket.jpg" group-title="Web Series",LBW (1080p)
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E41-44.Dual.1080P.mkv
+#EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/01/LBW.Love.Beyond.Wicket.jpg" group-title="Web Series",LBW (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E45-48.Dual.1080P.mkv
+#EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/01/LBW.Love.Beyond.Wicket.jpg" group-title="Web Series",LBW (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E45-48.Dual.720P.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/02/the.50.jpg" group-title="Web Series",The 50 (2026) S01E38 Hindi Hotstar WEB (1080p)
 https://ctyjk89.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]The.50.S01E38.1080P.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/02/the.50.jpg" group-title="Web Series",The 50 (2026) S01E38 Hindi Hotstar WEB (720p)

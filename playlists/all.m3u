@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/02/Sangamarmar.jpg" group-title="Web Series",Sangamarmar (2026) S01E14 (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Sangamarmar.(2026).S01E14-17.Dual.720P.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/02/Sangamarmar.jpg" group-title="Web Series",Sangamarmar (2026) S01E14 (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Sangamarmar.(2026).S01E14-17.Dual.1080P.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Chiraiya.jpg" group-title="Web Series",Chiraiya (2026) S01 Dual Audio [Bengali ORG (480p)
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Chiraiya.(2026).S01.Dual.480P.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Chiraiya.jpg" group-title="Web Series",Chiraiya (2026) S01 Dual Audio [Bengali ORG (720p)
@@ -545,6 +549,10 @@ https://ctyjk89.b-cdn.net/s3/upload/videos/2026/01/[Fibwatch.Com]LBW.Love.Beyond
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E41-44.Dual.720P.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/01/LBW.Love.Beyond.Wicket.jpg" group-title="Web Series",LBW (1080p)
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E41-44.Dual.1080P.mkv
+#EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/01/LBW.Love.Beyond.Wicket.jpg" group-title="Web Series",LBW (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E45-48.Dual.1080P.mkv
+#EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/01/LBW.Love.Beyond.Wicket.jpg" group-title="Web Series",LBW (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]LBW.Love.Beyond.Wicket.(2026).S01E45-48.Dual.720P.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/02/the.50.jpg" group-title="Web Series",The 50 (2026) S01E38 Hindi Hotstar WEB (1080p)
 https://ctyjk89.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]The.50.S01E38.1080P.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2026/02/the.50.jpg" group-title="Web Series",The 50 (2026) S01E38 Hindi Hotstar WEB (720p)
@@ -2438,6 +2446,10 @@ https://ctyjk89.b-cdn.net/s3/upload/videos/2026/01/[Fibwatch.Com]Surely.Tomorrow
 https://ctyjk89.b-cdn.net/s3/upload/videos/2026/01/[Fibwatch.Com]Surely.Tomorrow.S01E12.Final.Dual.1080p.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2025/12/Naagin.S07.jpg" group-title="Web Series",Naagin (2025) S07E06 Hindi JH WEB (720p)
 https://ctyjk89.b-cdn.net/s3/upload/videos/2026/01/[Fibwatch.Com]Naagin.S07E06.720P.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/shubbh.mangalam.jpg" group-title="Hindi",Shubbh Mangalam (2024) Hindi JH WEB (1080p)
+https://jyuhny7.b-cdn.net/upload/videos/2024/03/[Fibwatch.Com]Shubbh.Mangalam.2024.Hindi.1080p.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/shubbh.mangalam.jpg" group-title="Hindi",Shubbh Mangalam (2024) Hindi JH WEB (720p)
+https://jyuhny7.b-cdn.net/upload/videos/2024/03/[Fibwatch.Com]Shubbh.Mangalam.2024.Hindi.720p.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/01/BORDER-2.jpg" group-title="Hindi",Border 2 (2026) Hindi Netflix WEB (480p)
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Border.2.(2026).Hindi.480P.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/01/BORDER-2.jpg" group-title="Hindi",Border 2 (2026) Hindi Netflix WEB (1080p)
@@ -4456,6 +4468,22 @@ https://ctyjk89.b-cdn.net/s2/upload/videos/2024/11/[Fibwatch.Com]Once.Again.(201
 https://ctyjk89.b-cdn.net/s2/upload/videos/2024/11/[Fibwatch.Com]The.Lunchbox.2013.BluRay.Hindi.1080p.mkv
 #EXTINF:-1 tvg-logo="https://ctyjk89.b-cdn.net/upload/photos/2024/11/ed9343ba02.jpg" group-title="Hindi",The Lunchbox – Dabba (2013) Hindi BluRay 720p (720p)
 https://ctyjk89.b-cdn.net/s2/upload/videos/2024/11/[Fibwatch.Com]The.Lunchbox.2013.BluRay.Hindi.720p.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Scary.Movie.2.(2001).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Scary Movie 2 (2001) Dual Audio [Hindi (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Sacry.Movie.2.(2001).1080p.Dual..mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Scary.Movie.2.(2001).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Scary Movie 2 (2001) Dual Audio [Hindi (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Sacry.Movie.2.(2001).720p.Dual.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Armed.and.Dangerous.(1986).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Armed and Dangerous (1986) Dual Audio [Hindi (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Armed.and.Dangerous.(1986).Dual.1080p.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Armed.and.Dangerous.(1986).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Armed and Dangerous (1986) Dual Audio [Hindi (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Armed.and.Dangerous.(1986).Dual.720p.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Detention.(2011).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Detention (2011) Dual Audio [Hindi (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Detention.2011.1080p.Dual.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Detention.(2011).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Detention (2011) Dual Audio [Hindi (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Detention.2011.720p.Dual.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Scary.Movie.3.(2003).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Scary Movie 3 (2003) Dual Audio [Hindi (720p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Scary.Movie.3.2003.720P.Dual.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Scary.Movie.3.(2003).Hindi.Dubbed.jpg" group-title="Hindi Dubbed",Scary Movie 3 (2003) Dual Audio [Hindi (1080p)
+https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Scary.Movie.3.2003.1080P.Dual.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Vishnu.Vinyasam.jpg" group-title="Hindi Dubbed",Vishnu Vinyasam (2026) Dual Audio [Hindi ORG (1080p)
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Vishnu.Vinyasam.(2026).Dual.1080P.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/Vishnu.Vinyasam.jpg" group-title="Hindi Dubbed",Vishnu Vinyasam (2026) Dual Audio [Hindi ORG (480p)

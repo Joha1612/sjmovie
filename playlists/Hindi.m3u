@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/shubbh.mangalam.jpg" group-title="Hindi",Shubbh Mangalam (2024) Hindi JH WEB (1080p)
+https://jyuhny7.b-cdn.net/upload/videos/2024/03/[Fibwatch.Com]Shubbh.Mangalam.2024.Hindi.1080p.mkv
+#EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/03/shubbh.mangalam.jpg" group-title="Hindi",Shubbh Mangalam (2024) Hindi JH WEB (720p)
+https://jyuhny7.b-cdn.net/upload/videos/2024/03/[Fibwatch.Com]Shubbh.Mangalam.2024.Hindi.720p.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/01/BORDER-2.jpg" group-title="Hindi",Border 2 (2026) Hindi Netflix WEB (480p)
 https://jyuhny7.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Border.2.(2026).Hindi.480P.mkv
 #EXTINF:-1 tvg-logo="https://jyuhny7.b-cdn.net/upload/photos/2026/01/BORDER-2.jpg" group-title="Hindi",Border 2 (2026) Hindi Netflix WEB (1080p)
