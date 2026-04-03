@@ -1,4 +1,10 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://xfgb67.b-cdn.net/upload/photos/2026/02/Vadh.2.(2026).Hindi.jpg" group-title="Hindi",Vadh 2 (2025) Hindi Netflix WEB (720p)
+https://xfgb67.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Vadh.2.(2025).Hindi.720p.mkv
+#EXTINF:-1 tvg-logo="https://xfgb67.b-cdn.net/upload/photos/2026/02/Vadh.2.(2026).Hindi.jpg" group-title="Hindi",Vadh 2 (2025) Hindi Netflix WEB (1080p)
+https://xfgb67.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Vadh.2.(2025).Hindi.1080p.mkv
+#EXTINF:-1 tvg-logo="https://xfgb67.b-cdn.net/upload/photos/2026/02/Vadh.2.(2026).Hindi.jpg" group-title="Hindi",Vadh 2 (2025) Hindi Netflix WEB (480p)
+https://xfgb67.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Vadh.2.(2025).Hindi.480p.mkv
 #EXTINF:-1 tvg-logo="https://kuinm89.b-cdn.net/upload/photos/2026/01/Happy.Patel.Khatarnak.Jasoos.jpg" group-title="Hindi",Happy Patel: Khatarnak Jasoos (2026) Hindi NF WEB (1080p)
 https://xfgb67.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Happy.Patel.Khatarnak.Jasoos.(2026).Hindi.1080p.mkv
 #EXTINF:-1 tvg-logo="https://kuinm89.b-cdn.net/upload/photos/2026/01/Happy.Patel.Khatarnak.Jasoos.jpg" group-title="Hindi",Happy Patel: Khatarnak Jasoos (2026) Hindi NF WEB (720p)
