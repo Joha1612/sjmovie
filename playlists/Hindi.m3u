@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://bhjl90.b-cdn.net/upload/photos/2026/04/Badal.(2000).Hindi.jpg" group-title="Hindi",Badal (2000) Hindi Amazon WEB (480p)
+https://bhjl90.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Badal.2000.Hindi.480p.mkv
+#EXTINF:-1 tvg-logo="https://bhjl90.b-cdn.net/upload/photos/2026/04/Badal.(2000).Hindi.jpg" group-title="Hindi",Badal (2000) Hindi Amazon WEB (720p)
+https://bhjl90.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Badal.2000.Hindi.720p.mkv
 #EXTINF:-1 tvg-logo="https://miok78.b-cdn.net/upload/photos/2026/04/Jeet.(1996).Hindi.jpg" group-title="Hindi",Jeet (1996) Hindi Amazon WEB (720p)
 https://bhjl90.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Jeet.1996.Hindi.720p.mkv
 #EXTINF:-1 tvg-logo="https://miok78.b-cdn.net/upload/photos/2026/04/Jeet.(1996).Hindi.jpg" group-title="Hindi",Jeet (1996) Hindi Amazon WEB (1080p)
