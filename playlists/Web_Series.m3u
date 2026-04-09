@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://kbn78.b-cdn.net/upload/photos/2026/02/naagin.S07.Bengali.jpg" group-title="Web Series",Naagin (2025) S07E29 (1080p)
+https://kbn78.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Naagin.S07E29-30.Bengali.1080P.mkv
+#EXTINF:-1 tvg-logo="https://kbn78.b-cdn.net/upload/photos/2026/02/naagin.S07.Bengali.jpg" group-title="Web Series",Naagin (2025) S07E29 (720p)
+https://kbn78.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Naagin.S07E29-30.Bengali.720P.mkv
 #EXTINF:-1 tvg-logo="https://kbn78.b-cdn.net/upload/photos/2026/01/Wheel.Of.Fortune.jpeg" group-title="Web Series",Wheel Of Fortune (2026) S01E50 (1080p)
 https://kbn78.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Wheel.Of.Fortune.(2026).S01E50-51.Hindi.1080P.mkv
 #EXTINF:-1 tvg-logo="https://kbn78.b-cdn.net/upload/photos/2026/01/Wheel.Of.Fortune.jpeg" group-title="Web Series",Wheel Of Fortune (2026) S01E50 (720p)
